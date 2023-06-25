@@ -13,6 +13,12 @@ import { MessagesService } from './messages.service';
 export class MessagesController {
   messagesService: MessagesService;
   constructor() {
+    // Need to use dependency injection
+    /* 
+      Inversion of control principle: 
+      classes should not create instances of 
+      its dependencies on its own
+    */
     this.messagesService = new MessagesService();
   }
   @Get()
