@@ -42,6 +42,10 @@ export class UsersController {
     session.userId = user.id;
     return user;
   }
+  @Post('/signout')
+  signOut(@Session() session: any) {
+    session.userId = null;
+  }
 
   @Get('/:id')
   async findUser(@Param('id') id: string) {
