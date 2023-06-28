@@ -17,7 +17,16 @@ export class User {
   email: string;
   @Column()
   password: string;
-
+  // Typeorm association arguments explanation:
+  /** first argument: at first, the Report entity is undefined
+   * since all the entities will be defined after all code get executed
+   * therefore wrapping the entity in a function
+   * the Report entity will be defined after wrapped function its done executed
+   */
+  /** second argument: its a function that is that take an instance of
+   * Report entity that you are trying to relate to
+   * then return the target entity instance back to the entity currently defining
+   */
   @OneToMany(() => Report, (report) => report.user)
   reports: Report[];
 
