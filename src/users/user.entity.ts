@@ -17,6 +17,9 @@ export class User {
   email: string;
   @Column()
   password: string;
+
+  @Column({ default: true })
+  admin: boolean;
   // Typeorm association arguments explanation:
   /** first argument: at first, the Report entity is undefined
    * since all the entities will be defined after all code get executed
