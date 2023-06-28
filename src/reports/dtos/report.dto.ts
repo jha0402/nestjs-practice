@@ -17,6 +17,8 @@ export class ReportDto {
   model: string;
   @Expose()
   mileage: number;
+  @Expose()
+  approved: boolean;
   // obj = original report entity
   // function: take look at user property and id and assign it to userId
   @Transform(({ obj }) => obj.user.id)
